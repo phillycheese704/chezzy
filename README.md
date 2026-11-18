@@ -36,11 +36,3 @@ These movie entries use original Chezzy shapes/emoji instead of copied film post
 ### 📵 Offline support
 
 After visiting once while connected, the service worker caches Chezzy's HTML, CSS, JavaScript, manifest and icon. The **catalogue and animation** can work offline, as long as the browser keeps its cache. **Films themselves do not play offline** and are **never secretly downloaded**. Official-source watch links require an internet connection.
-
-## 🚀 Publish on GitHub Pages
-
-In the repo, open **Settings → Pages**, choose **Deploy from a branch**, then select **main** and **/(root)** and save. GitHub Pages may take a short while to publish the first version. Relative file paths ensure this works on the \`/chezzy/\` subpath.
-
-## 🧾 Project code licence
-
-No separate open-source licence has been added for the Chezzy website code yet. The movie licences above apply to the respective films, **not** automatically to this website's code, design or branding.
