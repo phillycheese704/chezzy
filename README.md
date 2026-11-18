@@ -10,8 +10,11 @@
 | --- | --- | --- | --- |
 | **Caminandes: Llamigos** (2016, 2m30s) | © Blender Foundation | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) | [Wikimedia Commons file](https://commons.wikimedia.org/wiki/File:Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm) · [Blender Studio](https://studio.blender.org/projects/caminandes-3/) |
 | **Singularity** (2026, 6m31s) | © Blender Foundation | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | [Wikimedia Commons file](https://commons.wikimedia.org/wiki/File:SINGULARITY_-_Blender_Open_Movie-full_movie.webm) · [Blender Studio](https://studio.blender.org/projects/singularity/) |
+| **Wing It!** (2023, 3m58s) | © Blender Foundation | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | [Wikimedia Commons file](https://commons.wikimedia.org/wiki/File:WING_IT%21_-_Blender_Open_Movie-full_movie.webm) · [Blender Studio](https://studio.blender.org/projects/wing-it/) |
+| **Coffee Run** (2020, 3m05s) | © Blender Foundation | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | [Wikimedia Commons file](https://commons.wikimedia.org/wiki/File:Coffee_Run_-_Blender_Open_Movie-full_movie.webm) · [Blender Studio](https://studio.blender.org/projects/coffee-run/) |
+| **Spring** (2019, 7m44s) | © Blender Foundation · Directed by Andy Goralczyk | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | [Wikimedia Commons file](https://commons.wikimedia.org/wiki/File:Spring_-_Blender_Open_Movie.webm) · [Blender Studio](https://studio.blender.org/projects/spring/) |
 
-Credits: © Blender Foundation. The films are available for sharing under their respective Creative Commons Attribution licences. Streaming from Wikimedia Commons may use a lower-resolution transcode (format conversion); no new scenes or soundtrack are added. Chezzy is independent and not endorsed by Blender Studio. Film trademarks and logos are not used as Chezzy branding.
+Credits: © Blender Foundation. All five films are available for sharing under their respective Creative Commons Attribution licences. Streaming from Wikimedia Commons may use a lower-resolution transcode (format conversion); no new scenes or soundtrack are added. Chezzy is independent and not endorsed by Blender Studio. Film trademarks and logos are not used as Chezzy branding.
 
 ## 🍿 How it works
 
@@ -40,6 +43,10 @@ Technical notes: The site shell is cached by `sw.js` after an online visit. Movi
 
 ## 📱 iPad and GitHub Pages
 
-On iPad Safari, open https://phillycheese704.github.io/chezzy/?v=4 and refresh. The footer should read **v0.4**. You can use Safari Share → Add to Home Screen. Open the site online and save each film **before** going offline.
+On iPad Safari, open https://phillycheese704.github.io/chezzy/?v=5 and refresh. The footer should read **v0.5**. You can use Safari Share → Add to Home Screen. Open the site online and save each film **before** going offline.
 
 GitHub Pages runs the website code from the `main` branch root. It is not used to host full movie files.
+
+## 📅 New in v0.5
+
+Added **Wing It!** (2023), **Coffee Run** (2020) and **Spring** (2019), plus **Fantasy** and **Drama** filters. All three video files are hosted by Wikimedia Commons under CC BY 4.0; Chezzy still uses its own HTML5 player and opt-in offline storage. They have available 360p MPEG-4 QuickTime transcodes for iPad playback, although playback and storage depend on the browser and Wikimedia's API.

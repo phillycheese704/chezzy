@@ -38,3 +38,9 @@
 .player-message{margin:0;padding:12px 22px 0;min-height:32px;color:var(--gold);font-size:12px;line-height:1.5}
 .player-panel{max-height:97dvh}
 @media(max-width:560px){.movie-actions{grid-template-columns:1fr}.player-message{padding:10px 14px 0}}
+
+/* New film poster gradients, all original Chezzy CSS (no third-party poster art) */
+.art-wingit{background:radial-gradient(ellipse at 73% 25%,#ffba5266,transparent 40%),linear-gradient(145deg,#34233d,#1c3652 60%,#12151f)}
+.art-coffee{background:radial-gradient(ellipse at 24% 30%,#d3a45b45,transparent 44%),linear-gradient(145deg,#45302c,#35233a 60%,#151520)}
+.art-spring{background:radial-gradient(ellipse at 73% 24%,#88aa8f5e,transparent 43%),linear-gradient(145deg,#38463b,#253744 60%,#131923)}
+.art-wingit .art-character,.art-spring .art-character,.art-coffee .art-character{filter:drop-shadow(0 15px 20px #000a)}
