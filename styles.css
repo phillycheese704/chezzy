@@ -11,3 +11,18 @@
 @media(max-width:820px){.hero-content{padding:44px 33px}.hero-art{right:2%;opacity:.4}.toolbar{flex-direction:column;align-items:stretch}.search-field input{width:100%}.card-body{padding:17px}.film-grid{gap:15px}.card-art{height:220px}.detail-panel{grid-template-columns:1fr;max-width:510px}.modal-visual{min-height:185px}.modal-art{font-size:80px}.modal-content{padding:28px}}
 @media(max-width:560px){.app-shell{width:calc(100% - 30px)}.topbar{height:76px}.wordmark{font-size:21px}.top-nav{margin:0;gap:12px}.top-nav a{font-size:11px}.status{display:none}.hero{min-height:420px}.hero-content{padding:34px 23px}.hero h1{font-size:51px}.hero p{font-size:13px}.hero-art{right:-10%;width:70%;opacity:.2}.film-grid{grid-template-columns:1fr}.card-art{height:240px}.section-heading{align-items:center}.collection-counter{font-size:22px}.about-card{padding:25px 20px}.footer{flex-direction:column}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* Built-in Chezzy cinema overlay. The film itself is only an official YouTube iframe. */
+.movie-source-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:17px;margin-bottom:6px;font-size:12px}
+.movie-source-links a,.player-footer a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+.player-layer{position:fixed;inset:0;z-index:120;display:grid;place-items:center;padding:clamp(8px,2vw,24px)}
+.player-backdrop{position:absolute;inset:0;background:#02030beF;backdrop-filter:blur(12px)}
+.player-panel{position:relative;z-index:1;width:min(1080px,100%);max-height:96dvh;overflow-y:auto;border:1px solid #27375365;border-radius:17px;background:#12131b;box-shadow:0 26px 100px #000c}
+.player-heading{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:18px 22px 14px}
+.player-heading h2{font-size:clamp(17px,2.6vw,25px);letter-spacing:-.03em;margin:5px 0 0}
+.player-heading .player-close{position:static;flex-shrink:0}
+.player-screen{width:100%;aspect-ratio:16/9;background:#000}
+.player-screen iframe{display:block;width:100%;height:100%;border:0;background:#000}
+.player-footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:17px 22px 0;color:#c0bfce;font-size:12px}
+.player-disclaimer{padding:0 22px 16px;color:#8f92a2;font-size:11px;line-height:1.6}
+@media(max-width:560px){.player-layer{padding:0}.player-panel{border-radius:0;max-height:100dvh}.player-heading{padding:12px 14px}.player-footer{padding:12px 14px 0}.player-disclaimer{padding:0 14px 12px}}

@@ -2,8 +2,8 @@
 'use strict';
 // These are official source links. No film media or third-party posters are hosted by Chezzy.
 const films=[
-  {id:'llamigos',title:'Caminandes: Llamigos',year:'2016',runtime:'Animated short',genres:['animation','comedy'],tag:'COMEDY SHORT',art:'🦙',artClass:'art-caminandes',subtitle:'Animation · Comedy · Short',description:'A goofy, mostly wordless animated adventure with a curious llama and a penguin. Perfect for a tiny movie break.',creator:'Blender Foundation',licence:'Creative Commons Attribution (CC BY 3.0)',licenceUrl:'https://creativecommons.org/licenses/by/3.0/',sourceUrl:'https://studio.blender.org/projects/caminandes-3/',subtitles:'Not confirmed',credit:'Caminandes: Llamigos — © Blender Foundation. Original film and source: Blender Studio. Licensed CC BY; this listing uses original Chezzy emoji artwork rather than the film poster.'},
-  {id:'singularity',title:'Singularity',year:'2026',runtime:'Animated short',genres:['animation','adventure'],tag:'SPACE ADVENTURE',art:'✦',artClass:'art-singularity',subtitle:'Animation · Sci-fi · Short',description:'A beautiful animated science-fiction adventure following a small creature on a surprising journey through space.',creator:'Blender Foundation',licence:'Creative Commons Attribution 4.0 (CC BY 4.0)',licenceUrl:'https://studio.blender.org/projects/singularity/pages/licensing/',sourceUrl:'https://studio.blender.org/projects/singularity/',subtitles:'Not confirmed',credit:'Singularity — © Blender Foundation. Source: Blender Studio. Film content CC BY 4.0; logos and trademarks are excluded. Chezzy does not use those logos.'}
+  {id:'llamigos',title:'Caminandes: Llamigos',year:'2016',runtime:'2 min 30 sec',youtubeId:'L6mLFxGRFI4',genres:['animation','comedy'],tag:'COMEDY SHORT',art:'🦙',artClass:'art-caminandes',subtitle:'Animation · Comedy · Short',description:'A goofy, mostly wordless animated adventure with a curious llama and a penguin. Perfect for a tiny movie break.',creator:'Blender Foundation',licence:'Creative Commons Attribution (CC BY 3.0)',licenceUrl:'https://creativecommons.org/licenses/by/3.0/',sourceUrl:'https://studio.blender.org/projects/caminandes-3/',subtitles:'Not confirmed',credit:'Caminandes: Llamigos — © Blender Foundation. Original film and source: Blender Studio. Licensed CC BY; this listing uses original Chezzy emoji artwork rather than the film poster.'},
+  {id:'singularity',title:'Singularity',year:'2026',runtime:'6 min 31 sec',youtubeId:'l5OZu-IrXpw',genres:['animation','adventure'],tag:'SPACE ADVENTURE',art:'✦',artClass:'art-singularity',subtitle:'Animation · Sci-fi · Short',description:'A beautiful animated science-fiction adventure following a small creature on a surprising journey through space.',creator:'Blender Foundation',licence:'Creative Commons Attribution 4.0 (CC BY 4.0)',licenceUrl:'https://studio.blender.org/projects/singularity/pages/licensing/',sourceUrl:'https://studio.blender.org/projects/singularity/',subtitles:'Not confirmed',credit:'Singularity — © Blender Foundation. Source: Blender Studio. Film content CC BY 4.0; logos and trademarks are excluded. Chezzy does not use those logos.'}
 ];
 const grid=document.getElementById('filmGrid'),empty=document.getElementById('emptyResults'),search=document.getElementById('search'),modal=document.getElementById('detailModal');
 let currentFilter='all',primedId=null,lastFocus=null;
@@ -45,14 +45,51 @@ function openDetails(f){
   document.getElementById('detailSubtitles').textContent=f.subtitles;
   document.getElementById('detailCredit').textContent=f.credit;
   const lic=document.getElementById('detailLicence');lic.textContent=f.licence+' ↗';lic.href=f.licenceUrl;
-  document.getElementById('watchLink').href=f.sourceUrl;
+  document.getElementById('watchLink').href='https://www.youtube.com/watch?v='+f.youtubeId;
+  document.getElementById('studioLink').href=f.sourceUrl;
+  document.getElementById('playButton').onclick=()=>openPlayer(f);
   const pic=document.getElementById('detailVisual');pic.className='modal-visual '+f.artClass;pic.querySelector('.modal-art').textContent=f.art;
   modal.hidden=false;document.body.classList.add('modal-open');document.querySelector('.detail-panel').focus();
 }
 function closeDetails(){modal.hidden=true;document.body.classList.remove('modal-open');if(lastFocus&&lastFocus.isConnected)lastFocus.focus();}
+
+const playerModal=document.getElementById('playerModal');
+const movieFrame=document.getElementById('movieFrame');
+function openPlayer(f){
+  if(!navigator.onLine){
+    alert('You need an internet connection to stream this film. Chezzy itself still works offline!');
+    return;
+  }
+  playerModal.hidden=false;
+  modal.inert=true;
+  document.getElementById('playerTitle').textContent=f.title;
+  document.getElementById('playerYouTube').href='https://www.youtube.com/watch?v='+f.youtubeId;
+  // The video is requested only after the person presses Play.
+  // This uses YouTube's privacy-enhanced official embed, not a copied film file.
+  movieFrame.src='https://www.youtube-nocookie.com/embed/'+f.youtubeId+'?playsinline=1&fs=1&rel=0&autoplay=1';
+  document.getElementById('closePlayer').focus();
+}
+function closePlayer(){
+  movieFrame.removeAttribute('src'); // Stop playback and network requests when the player closes.
+  playerModal.hidden=true;
+  modal.inert=false;
+  document.getElementById('playButton').focus();
+}
+document.getElementById('closePlayer').addEventListener('click',closePlayer);
+document.getElementById('closePlayerBackdrop').addEventListener('click',closePlayer);
+document.addEventListener('keydown',e=>{
+  if(playerModal.hidden)return;
+  if(e.key==='Escape'){e.preventDefault();closePlayer();}
+  if(e.key==='Tab'){
+    const els=[...playerModal.querySelectorAll('button,a[href],iframe')];
+    const first=els[0],last=els[els.length-1];
+    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+  }
+});
 document.getElementById('closeDetails').addEventListener('click',closeDetails);
 modal.querySelector('.modal-backdrop').addEventListener('click',closeDetails);
-document.addEventListener('keydown',e=>{if(modal.hidden)return;if(e.key==='Escape'){closeDetails();return}if(e.key==='Tab'){const els=[...modal.querySelectorAll('button,a[href]')],first=els[0],last=els[els.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
+document.addEventListener('keydown',e=>{if(modal.hidden||!playerModal.hidden)return;if(e.key==='Escape'){closeDetails();return}if(e.key==='Tab'){const els=[...modal.querySelectorAll('button,a[href]')],first=els[0],last=els[els.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
 document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{currentFilter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(n=>n.classList.toggle('selected',n===b));render()}));
 search.addEventListener('input',render);
 function connection(){const off=!navigator.onLine;document.getElementById('connectionStatus').classList.toggle('offline',off);document.getElementById('statusText').textContent=off?'Offline mode':'Ready to explore';}

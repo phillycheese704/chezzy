@@ -1,10 +1,10 @@
 # 🍿 Chezzy
 
-**Movie night, your way.** A small, ad-free movie discovery site with a dark black, cinema-red and gold theme (and very subtle blue outlines).
+**Movie night, your way.** A small movie discovery site with no Chezzy-run adverts with a dark black, cinema-red and gold theme (and very subtle blue outlines).
 
 🌐 **Website:** https://phillycheese704.github.io/chezzy/
 
-> **Status:** First version. Currently Chezzy links to the filmmakers' official websites to watch the films. It does **not** host or embed movie files.
+> **Status:** First version. Films play inside Chezzy through the filmmakers' **official YouTube embeds**. Chezzy does **not** upload or host video files.
 
 ## 🎬 Films and credits
 
@@ -29,10 +29,12 @@ These movie entries use original Chezzy shapes/emoji instead of copied film post
 
 - Dark theme: **black + red + gold** with very subtle dark-blue outlines.
 - **First tap** on a film: popcorn animation.
-- **Second tap**: title, year, description, creator, subtitle status, licence and an official-source watch button.
+- **Second tap**: title, runtime, description, creator, subtitle status, licence and an in-site Play button.
+- **Third tap (Play)**: opens the official Blender Studio YouTube embed in a dedicated 16:9 cinema player; YouTube's built-in player offers fullscreen when supported.
+- YouTube may display its own advertising or cookies. Chezzy does not control that.
 - Search and category filters; responsive layout for iPad, phone and desktop.
 - Installable/offline-friendly site shell with \`sw.js\`.
 
 ### 📵 Offline support
 
-After visiting once while connected, the service worker caches Chezzy's HTML, CSS, JavaScript, manifest and icon. The **catalogue and animation** can work offline, as long as the browser keeps its cache. **Films themselves do not play offline** and are **never secretly downloaded**. Official-source watch links require an internet connection.
+After visiting once while connected, the service worker caches Chezzy's HTML, CSS, JavaScript, manifest and icon. The **catalogue and animation** can work offline, as long as the browser keeps its cache. **Films themselves do not play offline** and are **never secretly downloaded**. The embedded player requires an internet connection. Video is never cached by Chezzy.
