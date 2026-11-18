@@ -37,7 +37,7 @@ These movie entries use original Chezzy shapes/emoji instead of copied film post
 
 ### 📵 Offline support
 
-After visiting once while connected, the service worker caches Chezzy's HTML, CSS, JavaScript, manifest and icon. The **catalogue and animation** can work offline, as long as the browser keeps its cache. **Films themselves do not play offline** and are **never secretly downloaded**. The embedded player requires an internet connection. Video is never cached by Chezzy.
+After visiting once while connected, the service worker caches Chezzy's HTML, CSS, JavaScript, manifest and icon. It tries the network first for new website code, then uses cached files if offline. The **catalogue and animation** can work offline, as long as the browser keeps its cache. **Films themselves do not play offline** and are **never secretly downloaded**. The embedded player requires an internet connection. Video is never cached by Chezzy.
 
 ## 📺 Official embedded videos
 
@@ -46,7 +46,7 @@ After visiting once while connected, the service worker caches Chezzy's HTML, CS
 | **Caminandes: Llamigos** | https://www.youtube.com/watch?v=L6mLFxGRFI4 |
 | **Singularity** | https://www.youtube.com/watch?v=l5OZu-IrXpw |
 
-Tap a movie **once for popcorn**, **again for details**, then **Play movie here**. This loads an official YouTube player inside Chezzy. The player includes a fullscreen control where supported; if embedding or fullscreen is unavailable, open the **Watch on official YouTube** link. iPad compatibility may vary by browser.
+Tap a movie **once for popcorn**, **again for details**, then **Play movie here**. This loads an official YouTube player inside Chezzy. The player includes a fullscreen control where supported; if embedding or fullscreen is unavailable, open the **Watch on official YouTube** link. The main Play button also opens YouTube as a fallback when JavaScript isn't running. iPad compatibility may vary by browser.
 
 Embeds use YouTube's privacy-enhanced (`youtube-nocookie.com`) domain and only load after clicking Play. YouTube may still use cookies or show its own ads. Films **will not work offline**.
 
@@ -59,3 +59,7 @@ Go to **Settings → Pages → Deploy from a branch**. Choose `main` and `/(root
 ## 🧾 Code licensing
 
 No separate software licence is assigned to the Chezzy website code at this stage. The CC licences above cover the respective films, not automatically the Chezzy branding or design.
+
+### Troubleshooting on iPad
+
+If a movie button seems unresponsive after an update, open the site in Safari and refresh the page. The site footer should say **v0.3**. You can also use the **Watch on official YouTube** backup link under each film. Videos require the internet, and fullscreen depends on your device and YouTube.

@@ -7,7 +7,7 @@
   <meta name="description" content="Chezzy — your cosy corner of open movies and animated shorts.">
   <link rel="icon" type="image/svg+xml" href="./icon.svg">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles.css?v=3">
   <title>Chezzy — Movie night, your way.</title>
 </head>
 <body>
@@ -52,7 +52,7 @@
         <div class="about-icons"><span>✧ Open films</span><span>✧ Proper credits</span><span>✧ Offline-ready website</span></div>
       </section>
     </main>
-    <footer class="footer"><span>🍿 <b>CHEZZY</b> <span class="footer-muted">— Your tiny cinema.</span></span><span class="footer-muted">Made with popcorn & care · 2026</span></footer>
+    <footer class="footer"><span>🍿 <b>CHEZZY</b> <span class="footer-muted">— Your tiny cinema.</span></span><span class="footer-muted">Made with popcorn & care · v0.3</span></footer>
   </div>
 
   <div id="detailModal" class="modal-layer" hidden>
@@ -67,12 +67,12 @@
         <p id="detailDescription" class="detail-description"></p>
         <div class="detail-facts"><div><span>CREATOR</span><strong id="detailCreator"></strong></div><div><span>LICENCE</span><a id="detailLicence" href="#" target="_blank" rel="noopener noreferrer"></a></div><div><span>SUBTITLES</span><strong id="detailSubtitles"></strong></div></div>
         <p class="credit-note" id="detailCredit"></p>
-        <button class="primary-btn watch-link" id="playButton" type="button">▶ &nbsp; Play movie here <span aria-hidden="true">⛶</span></button>
+        <a class="primary-btn watch-link" id="playButton" href="https://www.youtube.com/watch?v=L6mLFxGRFI4" target="_blank" rel="noopener noreferrer">▶ &nbsp; Play movie here <span aria-hidden="true">⛶</span></a>
         <div class="movie-source-links">
           <a id="watchLink" href="#" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
           <a id="studioLink" href="#" target="_blank" rel="noopener noreferrer">Blender Studio ↗</a>
         </div>
-        <p class="watch-note">The player streams from Blender Studio’s official YouTube upload. Internet required. YouTube may show ads or use cookies; nothing is downloaded by Chezzy.</p>
+        <p class="watch-note">The player streams from Blender Studio’s official YouTube upload. Internet required. If the embedded player cannot open, use the Watch on YouTube link below. YouTube may show ads or use cookies.</p>
       </div>
     </section>
   </div>
@@ -90,6 +90,6 @@
       <p class="player-disclaimer">Video streamed from Blender Studio's official YouTube upload. Chezzy does not host or download this film. Internet required.</p>
     </section>
   </div>
-  <script src="./app.js" defer></script>
+  <script src="./app.js?v=3" defer></script>
 </body>
 </html>

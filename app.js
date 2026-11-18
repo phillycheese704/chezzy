@@ -47,7 +47,9 @@ function openDetails(f){
   const lic=document.getElementById('detailLicence');lic.textContent=f.licence+' ↗';lic.href=f.licenceUrl;
   document.getElementById('watchLink').href='https://www.youtube.com/watch?v='+f.youtubeId;
   document.getElementById('studioLink').href=f.sourceUrl;
-  document.getElementById('playButton').onclick=()=>openPlayer(f);
+  const playButton=document.getElementById('playButton');
+  playButton.href='https://www.youtube.com/watch?v='+f.youtubeId;
+  playButton.onclick=event=>{event.preventDefault();openPlayer(f);};
   const pic=document.getElementById('detailVisual');pic.className='modal-visual '+f.artClass;pic.querySelector('.modal-art').textContent=f.art;
   modal.hidden=false;document.body.classList.add('modal-open');document.querySelector('.detail-panel').focus();
 }
@@ -57,7 +59,7 @@ const playerModal=document.getElementById('playerModal');
 const movieFrame=document.getElementById('movieFrame');
 function openPlayer(f){
   if(!navigator.onLine){
-    alert('You need an internet connection to stream this film. Chezzy itself still works offline!');
+    alert('Internet is needed for films. The Chezzy catalogue stays available offline.');
     return;
   }
   playerModal.hidden=false;
@@ -94,4 +96,4 @@ document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click'
 search.addEventListener('input',render);
 function connection(){const off=!navigator.onLine;document.getElementById('connectionStatus').classList.toggle('offline',off);document.getElementById('statusText').textContent=off?'Offline mode':'Ready to explore';}
 window.addEventListener('online',connection);window.addEventListener('offline',connection);connection();render();
-if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(error=>console.warn('Offline mode could not start',error)));}
+if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=3').catch(error=>console.warn('Offline mode could not start',error)));}
