@@ -44,3 +44,23 @@
 .art-coffee{background:radial-gradient(ellipse at 24% 30%,#d3a45b45,transparent 44%),linear-gradient(145deg,#45302c,#35233a 60%,#151520)}
 .art-spring{background:radial-gradient(ellipse at 73% 24%,#88aa8f5e,transparent 43%),linear-gradient(145deg,#38463b,#253744 60%,#131923)}
 .art-wingit .art-character,.art-spring .art-character,.art-coffee .art-character{filter:drop-shadow(0 15px 20px #000a)}
+
+/* Caminandes collection and real, credited Wikimedia thumbnails */
+.caminandes-collection{padding:65px 0 9px;scroll-margin-top:16px}
+.caminandes-collection .section-heading h2 span{color:var(--gold)}
+.caminandes-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;margin-top:28px}
+.caminandes-grid .card-art{height:205px}
+.caminandes-grid .card-body{padding:17px}
+.caminandes-grid .card-title{font-size:16px}
+.caminandes-grid .card-subtitle{font-size:11px}
+.caminandes-grid .card-footer{gap:10px;flex-wrap:wrap;margin-top:16px}
+.art-llamadrama{background:linear-gradient(155deg,#624b37,#334c65 55%,#161b27)}
+.art-grandillama{background:linear-gradient(155deg,#79583b,#334b6b 55%,#161c27)}
+.movie-poster{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;z-index:2}
+.card-art.has-photo .art-character,.card-art.has-photo .art-spark,.modal-visual.has-photo .modal-art{visibility:hidden}
+.card-art.has-photo .art-caption{z-index:4;background:#10131bdd}
+.modal-visual .movie-poster{z-index:2}
+.poster-credit{font-size:11px;line-height:1.6}
+.poster-credit-link{display:inline-block;color:var(--gold);font-size:11px;text-decoration:underline;text-underline-offset:3px;margin-bottom:14px}
+@media(max-width:800px){.caminandes-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.caminandes-grid .card-art{height:205px}}
+@media(max-width:560px){.caminandes-grid{grid-template-columns:1fr}.caminandes-grid .card-art{height:235px}.top-nav{gap:9px}.top-nav a{font-size:10px}}
