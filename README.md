@@ -1,65 +1,45 @@
 # 🍿 Chezzy
 
-**Movie night, your way.** A small movie discovery site with no Chezzy-run adverts, using a black, cinema-red and gold theme (and very subtle blue outlines).
+**Movie night, your way.** An ad-free discovery website with a black, red and gold theme, tiny dark-blue outlines, movie details and a native fullscreen video player.
 
-🌐 **Website:** https://phillycheese704.github.io/chezzy/
+🌐 **Watch Chezzy:** https://phillycheese704.github.io/chezzy/
 
-> **Status:** First version. Films play inside Chezzy through the filmmakers' **official YouTube embeds**. Chezzy does **not** upload or host video files.
+## 🎬 Films, source files and licences
 
-## 🎬 Films and credits
-
-| Film | Creator | Original source | Licence information |
+| Film | Copyright holder | Licence | Downloadable file and original studio |
 | --- | --- | --- | --- |
-| **Caminandes: Llamigos** (2016) | © Blender Foundation | [Blender Studio — Caminandes 3](https://studio.blender.org/projects/caminandes-3/) | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/); see [Blender's sharing notes](https://studio.blender.org/remixing/) |
-| **Singularity** (2026) | © Blender Foundation | [Blender Studio — Singularity](https://studio.blender.org/projects/singularity/) | [Official Blender Studio licensing page — CC BY 4.0](https://studio.blender.org/projects/singularity/pages/licensing/) |
+| **Caminandes: Llamigos** (2016, 2m30s) | © Blender Foundation | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) | [Wikimedia Commons file](https://commons.wikimedia.org/wiki/File:Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm) · [Blender Studio](https://studio.blender.org/projects/caminandes-3/) |
+| **Singularity** (2026, 6m31s) | © Blender Foundation | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | [Wikimedia Commons file](https://commons.wikimedia.org/wiki/File:SINGULARITY_-_Blender_Open_Movie-full_movie.webm) · [Blender Studio](https://studio.blender.org/projects/singularity/) |
 
-**Attribution:** (CC) Blender Foundation | [studio.blender.org](https://studio.blender.org/)
+Credits: © Blender Foundation. The films are available for sharing under their respective Creative Commons Attribution licences. Streaming from Wikimedia Commons may use a lower-resolution transcode (format conversion); no new scenes or soundtrack are added. Chezzy is independent and not endorsed by Blender Studio. Film trademarks and logos are not used as Chezzy branding.
 
-These movie entries use original Chezzy shapes/emoji instead of copied film posters, branding, screenshots, audio or video. The Blender Foundation and Blender Studio do not sponsor or endorse Chezzy. Trademarks, logos, third-party materials and any separately excluded assets are **not** automatically covered by a film's Creative Commons licence.
+## 🍿 How it works
 
-### ⚖️ Copyright safety
+1. Tap a film once for popcorn; tap it again for its title, description, length, creator, subtitle status and licence.
+2. Press **Watch on Chezzy**. The browser's native video controls support full screen on compatible devices.
+3. Video is streamed from Wikimedia Commons directly into a native HTML5 player — **not YouTube**. The video is not uploaded into the GitHub repo.
+4. If a source format fails on your device, open the Wikimedia Commons file link to try another format.
 
-- Use the filmmaker's official embeds and source links; don't reupload files without checking the **exact** film and all relevant rights.
-- Only host videos, music, subtitles or thumbnails after checking their licensing and providing appropriate attribution.
-- For CC BY content, credit the creator, provide a source and licence link, and say if changes were made.
-- A "free download" does **not** by itself grant permission to republish.
-- No film can be guaranteed lawful everywhere without checking the relevant laws and rights.
+## 📥 Offline film saving
 
-## 🍿 Site features
+1. While online, open movie details and tap **Save for offline**.
+2. Keep the site open while the progress increases. Videos are not saved automatically.
+3. After the save confirms success, select **Watch on Chezzy** to play the copy even in Airplane Mode.
+4. **Download to Files** can export a saved copy to Safari Downloads / the iPad Files app where supported.
+5. **Remove saved film** releases browser storage.
 
-- Dark theme: **black + red + gold** with very subtle dark-blue outlines.
-- **First tap** on a film: popcorn animation.
-- **Second tap**: title, runtime, description, creator, subtitle status, licence and an in-site Play button.
-- **Third tap (Play)**: opens the official Blender Studio YouTube embed in a dedicated 16:9 cinema player; YouTube's built-in player offers fullscreen when supported.
-- YouTube may display its own advertising or cookies. Chezzy does not control that.
-- Search and category filters; responsive layout for iPad, phone and desktop.
-- Installable/offline-friendly site shell with `sw.js`.
+Technical notes: The site shell is cached by `sw.js` after an online visit. Movies are stored as Blobs in IndexedDB and played from local blob URLs, not from a YouTube embed. Saving requires Wikimedia Commons to permit the browser's cross-origin download, and enough free space. Some formats or device/browser versions may not play. Browsers including Safari can remove stored website data, so offline browser saves cannot be guaranteed permanent. A file saved to the iPad Files app is a more durable backup.
 
-### 📵 Offline support
+## ⚖️ Copyright safety
 
-After visiting once while connected, the service worker caches Chezzy's HTML, CSS, JavaScript, manifest and icon. It tries the network first for new website code, then uses cached files if offline. The **catalogue and animation** can work offline, as long as the browser keeps its cache. **Films themselves do not play offline** and are **never secretly downloaded**. The embedded player requires an internet connection. Video is never cached by Chezzy.
+- Verify the rights of each exact movie file, not just whether it can be downloaded for free.
+- Credit creators; link to sources and licences; state whether a video was modified.
+- Check any separately licensed subtitles, music, covers or trademarks before reusing them.
+- The film licences above do not automatically apply to Chezzy's branding or website code.
+- No website can guarantee copyright compliance in every jurisdiction. Ask a trusted adult for help reviewing any uncertain content before adding it.
 
-## 📺 Official embedded videos
+## 📱 iPad and GitHub Pages
 
-| Film | Official Blender Studio upload |
-| --- | --- |
-| **Caminandes: Llamigos** | https://www.youtube.com/watch?v=L6mLFxGRFI4 |
-| **Singularity** | https://www.youtube.com/watch?v=l5OZu-IrXpw |
+On iPad Safari, open https://phillycheese704.github.io/chezzy/?v=4 and refresh. The footer should read **v0.4**. You can use Safari Share → Add to Home Screen. Open the site online and save each film **before** going offline.
 
-Tap a movie **once for popcorn**, **again for details**, then **Play movie here**. This loads an official YouTube player inside Chezzy. The player includes a fullscreen control where supported; if embedding or fullscreen is unavailable, open the **Watch on official YouTube** link. The main Play button also opens YouTube as a fallback when JavaScript isn't running. iPad compatibility may vary by browser.
-
-Embeds use YouTube's privacy-enhanced (`youtube-nocookie.com`) domain and only load after clicking Play. YouTube may still use cookies or show its own ads. Films **will not work offline**.
-
-YouTube guidance: [Embedding videos](https://support.google.com/youtube/answer/171780?hl=en-GB) · [Embedded player options](https://developers.google.com/youtube/player_parameters).
-
-## 🚀 Publish on GitHub Pages
-
-Go to **Settings → Pages → Deploy from a branch**. Choose `main` and `/(root)`, then Save.
-
-## 🧾 Code licensing
-
-No separate software licence is assigned to the Chezzy website code at this stage. The CC licences above cover the respective films, not automatically the Chezzy branding or design.
-
-### Troubleshooting on iPad
-
-If a movie button seems unresponsive after an update, open the site in Safari and refresh the page. The site footer should say **v0.3**. You can also use the **Watch on official YouTube** backup link under each film. Videos require the internet, and fullscreen depends on your device and YouTube.
+GitHub Pages runs the website code from the `main` branch root. It is not used to host full movie files.

@@ -26,3 +26,15 @@
 .player-footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:17px 22px 0;color:#c0bfce;font-size:12px}
 .player-disclaimer{padding:0 22px 16px;color:#8f92a2;font-size:11px;line-height:1.6}
 @media(max-width:560px){.player-layer{padding:0}.player-panel{border-radius:0;max-height:100dvh}.player-heading{padding:12px 14px}.player-footer{padding:12px 14px 0}.player-disclaimer{padding:0 14px 12px}}
+
+/* Chezzy v0.4: offline film controls and native HTML5 video */
+.movie-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.movie-actions .watch-link{width:100%;min-width:0;margin:0}
+.offline-btn{border:1px solid rgba(54,72,101,.4);border-radius:10px;background:#1b202e;color:#eddaaf;font-size:12px;font-weight:750;padding:13px 10px;min-height:46px;transition:background .15s}
+.offline-btn:hover{background:#263047}
+.offline-btn:disabled{cursor:wait;opacity:.6}
+.offline-status{color:#d6c49e;font-size:12px;min-height:22px;line-height:1.6;margin:14px 0 2px}
+.player-screen video{display:block;width:100%;height:100%;object-fit:contain;background:#000}
+.player-message{margin:0;padding:12px 22px 0;min-height:32px;color:var(--gold);font-size:12px;line-height:1.5}
+.player-panel{max-height:97dvh}
+@media(max-width:560px){.movie-actions{grid-template-columns:1fr}.player-message{padding:10px 14px 0}}

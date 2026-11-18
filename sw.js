@@ -1,7 +1,7 @@
 // Chezzy v3: network-first for site code to prevent old JS disabling new features.
-// Only first-party assets are cached. Video streams and YouTube embeds are never cached.
-const CACHE='chezzy-shell-v3';
-const SHELL=['./','./index.html','./styles.css?v=3','./app.js?v=3','./manifest.webmanifest','./icon.svg'];
+// Only first-party assets are cached. The viewer can save selected movies in IndexedDB, but the service worker never downloads them.
+const CACHE='chezzy-shell-v4';
+const SHELL=['./','./index.html','./styles.css?v=4','./app-v4.js?v=4','./manifest.webmanifest','./icon.svg'];
 
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()));
