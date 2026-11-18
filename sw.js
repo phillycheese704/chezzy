@@ -1,6 +1,6 @@
 
 /* Chezzy caches only its own small site files; no movies or external sites. */
-const CACHE='chezzy-shell-v1';
+const CACHE='chezzy-shell-v2';
 const SHELL=['./','./index.html','./styles.css','./app.js','./manifest.webmanifest','./icon.svg'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting()));
