@@ -1,6 +1,6 @@
 # 🍿 Chezzy
 
-**Movie night, your way.** A small movie discovery site with no Chezzy-run adverts with a dark black, cinema-red and gold theme (and very subtle blue outlines).
+**Movie night, your way.** A small movie discovery site with no Chezzy-run adverts, using a black, cinema-red and gold theme (and very subtle blue outlines).
 
 🌐 **Website:** https://phillycheese704.github.io/chezzy/
 
@@ -19,7 +19,7 @@ These movie entries use original Chezzy shapes/emoji instead of copied film post
 
 ### ⚖️ Copyright safety
 
-- Link to the official source until we have checked the **exact** film file and all relevant rights.
+- Use the filmmaker's official embeds and source links; don't reupload files without checking the **exact** film and all relevant rights.
 - Only host videos, music, subtitles or thumbnails after checking their licensing and providing appropriate attribution.
 - For CC BY content, credit the creator, provide a source and licence link, and say if changes were made.
 - A "free download" does **not** by itself grant permission to republish.
@@ -33,8 +33,29 @@ These movie entries use original Chezzy shapes/emoji instead of copied film post
 - **Third tap (Play)**: opens the official Blender Studio YouTube embed in a dedicated 16:9 cinema player; YouTube's built-in player offers fullscreen when supported.
 - YouTube may display its own advertising or cookies. Chezzy does not control that.
 - Search and category filters; responsive layout for iPad, phone and desktop.
-- Installable/offline-friendly site shell with \`sw.js\`.
+- Installable/offline-friendly site shell with `sw.js`.
 
 ### 📵 Offline support
 
 After visiting once while connected, the service worker caches Chezzy's HTML, CSS, JavaScript, manifest and icon. The **catalogue and animation** can work offline, as long as the browser keeps its cache. **Films themselves do not play offline** and are **never secretly downloaded**. The embedded player requires an internet connection. Video is never cached by Chezzy.
+
+## 📺 Official embedded videos
+
+| Film | Official Blender Studio upload |
+| --- | --- |
+| **Caminandes: Llamigos** | https://www.youtube.com/watch?v=L6mLFxGRFI4 |
+| **Singularity** | https://www.youtube.com/watch?v=l5OZu-IrXpw |
+
+Tap a movie **once for popcorn**, **again for details**, then **Play movie here**. This loads an official YouTube player inside Chezzy. The player includes a fullscreen control where supported; if embedding or fullscreen is unavailable, open the **Watch on official YouTube** link. iPad compatibility may vary by browser.
+
+Embeds use YouTube's privacy-enhanced (`youtube-nocookie.com`) domain and only load after clicking Play. YouTube may still use cookies or show its own ads. Films **will not work offline**.
+
+YouTube guidance: [Embedding videos](https://support.google.com/youtube/answer/171780?hl=en-GB) · [Embedded player options](https://developers.google.com/youtube/player_parameters).
+
+## 🚀 Publish on GitHub Pages
+
+Go to **Settings → Pages → Deploy from a branch**. Choose `main` and `/(root)`, then Save.
+
+## 🧾 Code licensing
+
+No separate software licence is assigned to the Chezzy website code at this stage. The CC licences above cover the respective films, not automatically the Chezzy branding or design.
