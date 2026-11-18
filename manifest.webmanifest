@@ -1,0 +1,18 @@
+{
+  "name": "Chezzy — Movie Night",
+  "short_name": "Chezzy",
+  "description": "A cosy catalogue of openly licensed animated films.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#090a0f",
+  "theme_color": "#090a0f",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090a0e">
+  <meta name="description" content="Chezzy — your cosy corner of open movies and animated shorts.">
+  <link rel="icon" type="image/svg+xml" href="./icon.svg">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Chezzy — Movie night, your way.</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="wordmark" href="./" aria-label="Chezzy home"><span aria-hidden="true">🍿</span><span>CHE<span class="logo-red">Z</span>ZY</span></a>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a class="current" href="#movies">Explore</a>
+        <a href="#about">About</a>
+      </nav>
+      <div class="status" id="connectionStatus" aria-live="polite"><span class="status-dot"></span><span id="statusText">Ready to watch</span></div>
+    </header>
+
+    <main>
+      <section class="hero" aria-label="Welcome to Chezzy">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="hero-content">
+          <span class="eyebrow"><span class="tiny-star">✦</span> THE LITTLE CINEMA WITH BIG CHARACTER</span>
+          <h1>Movie night,<br><em>your way.</em></h1>
+          <p>A cosy corner for wonderful movies, open animation and more. No subscriptions. Just a cosy collection of animated stories.</p>
+          <a class="primary-btn" href="#movies">Explore the collection <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true"><div class="halo"></div><div class="ticket ticket-one">★</div><div class="ticket ticket-two">✦</div><div class="popcorn-bucket"><span>🍿</span></div></div>
+        <div class="hero-index" aria-hidden="true">CHEZZY / 001</div>
+      </section>
+
+      <section id="movies" class="catalogue" aria-labelledby="catalogue-title">
+        <div class="section-heading">
+          <div><span class="section-kicker">THE COLLECTION</span><h2 id="catalogue-title">Now showing <span>✦</span></h2><p>Two openly licensed animated shorts to discover.</p></div>
+          <div class="collection-counter" aria-label="Two films listed">02 <span>FILMS</span></div>
+        </div>
+        <div class="toolbar"><div class="tabs" role="group" aria-label="Filter films"><button class="chip selected" data-filter="all" type="button">All films</button><button class="chip" data-filter="animation" type="button">Animation</button><button class="chip" data-filter="comedy" type="button">Comedy</button><button class="chip" data-filter="adventure" type="button">Adventure</button></div><label class="search-field"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"></circle><path d="m16.5 16.5 5 5"></path></svg><span class="sr-only">Search films</span><input id="search" placeholder="Search films..." autocomplete="off"></label></div>
+        <div id="filmGrid" class="film-grid" aria-live="polite"></div>
+        <p id="emptyResults" class="empty" hidden>No films match that search. Try another title!</p>
+        <p class="catalogue-note"><span aria-hidden="true">ⓘ</span> This starter links to the filmmakers' original pages. We haven't uploaded or embedded any film files yet.</p>
+      </section>
+
+      <section id="about" class="about-card">
+        <span class="section-kicker">WHY CHEZZY?</span>
+        <h2>Made for movie lovers. <span>Not pop-up ads.</span></h2>
+        <p>Chezzy is a small, independent movie-site project. We'll only feature films with a licence or permission we can verify, and we'll show those credits clearly.</p>
+        <div class="about-icons"><span>✧ Open films</span><span>✧ Proper credits</span><span>✧ Offline-ready website</span></div>
+      </section>
+    </main>
+    <footer class="footer"><span>🍿 <b>CHEZZY</b> <span class="footer-muted">— Your tiny cinema.</span></span><span class="footer-muted">Made with popcorn & care · 2026</span></footer>
+  </div>
+
+  <div id="detailModal" class="modal-layer" hidden>
+    <div class="modal-backdrop" data-close="true"></div>
+    <section class="detail-panel" role="dialog" aria-modal="true" aria-labelledby="detailTitle" tabindex="-1">
+      <button class="close-btn" id="closeDetails" aria-label="Close movie details" type="button">×</button>
+      <div class="modal-visual" id="detailVisual" aria-hidden="true"><div class="modal-art">✦</div></div>
+      <div class="modal-content">
+        <span class="section-kicker">THE MOVIE DETAILS</span>
+        <h2 id="detailTitle"></h2>
+        <p id="detailMeta" class="detail-meta"></p>
+        <p id="detailDescription" class="detail-description"></p>
+        <div class="detail-facts"><div><span>CREATOR</span><strong id="detailCreator"></strong></div><div><span>LICENCE</span><a id="detailLicence" href="#" target="_blank" rel="noopener noreferrer"></a></div><div><span>SUBTITLES</span><strong id="detailSubtitles"></strong></div></div>
+        <p class="credit-note" id="detailCredit"></p>
+        <a class="primary-btn watch-link" id="watchLink" href="#" target="_blank" rel="noopener noreferrer">▶ &nbsp; Watch at the official source <span aria-hidden="true">↗</span></a>
+        <p class="watch-note">Official source opens in another tab. In-site playback and downloads will be added only after confirming the exact files and rights.</p>
+      </div>
+    </section>
+  </div>
+  <script src="./app.js" defer></script>
+</body>
+</html>
